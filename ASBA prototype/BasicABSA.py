@@ -1,19 +1,41 @@
 """The following file provides a rough prototype for an ASBA system.
 
-Written by Griffin Gooch-Breault 3/17/2025"""
+Written by Griffin Gooch-Breault 3/17/2025
+"""
 
 # import
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch.nn.functional as F
+import nltk
+
+# rake_nltk requires these resources, need better solution than this
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+try:
+    nltk.data.find('corpora/stopwords')
+except LookupError:
+    nltk.download('stopwords')
+
+
+from rake_nltk import Rake
+
 
 # Example text:
 test_sentence = """
-    I really do like living in Vermont, but I absolutely hate the snow.
+    Steve Bannon is playing MAGA enforcer from the outside. Is the White House listening?
     """
 
 
-# Example aspects:
-aspect = ["Vermont", "Snow"]
+def extract_keywords(text, max_words):
+    """
+    Rudimentary system to take text and extract n top-rated keywords
+    """
+    r = Rake(max_length=max_words)
+
+    r.extract_keywords_from_text(text)
+    return r.get_ranked_phrases()
 
 
 def instance_model():
@@ -42,6 +64,9 @@ def run_absa(aspects, text):
 
 
 def softmax_response(output):
+    """
+    Normalizes output
+    """
     probs = F.softmax(output.logits, dim=1)
     probs = probs.detach().numpy()[0]
 
@@ -51,6 +76,9 @@ def softmax_response(output):
 
 
 def sentence_response(output):
+    """
+    Returns sentence in a simple human-readable format.
+    """
     probs = output.logits
     probs = probs.detach().numpy()[0]
 
@@ -60,4 +88,5 @@ def sentence_response(output):
 
 
 if __name__ == "__main__":
-    run_absa(aspect, test_sentence)
+    aspects = extract_keywords(test_sentence, 4)
+    run_absa(aspects, test_sentence)
