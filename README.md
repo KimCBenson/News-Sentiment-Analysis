@@ -1,5 +1,5 @@
-# News-Sentiment-Analysis
-## Project for CSI-280 by Kimberly Benson, Thomas Lukasiewicz, Griffin Gooch-Breault, Yin Bo Chen
+# News-Sentiment-Analysis (CSI-280-51 Project)
+## By Kimberly Benson, Thomas Lukasiewicz, Griffin Gooch-Breault, Yin Bo Chen
 
 # What Is This Project?
 
@@ -15,6 +15,7 @@ requirements.txt - set up for LLM
 
 ## Flask
 This directory handles the website for the project. Static subdirectory handles the css and json, templates contains the html.
+
 app.py - File that runs the website and handles the main logic.
 
 ## dataset
