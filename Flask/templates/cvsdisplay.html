@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>CSV Data</title>
-</head>
-<body>
-    <table>
-        <tbody>
-            {% for row in data %}
-            <tr>
-                {% for cell in row %}
-                <td>{{ cell }}</td>
-                {% endfor %}
-            </tr>
+{% extends "layout.html" %}
+{% block title %}
+CSV Data
+{% endblock %}
+{% block content %}
+<table>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
             {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
