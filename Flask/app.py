@@ -39,6 +39,12 @@ def nytdata():
        test_data = list(csv.reader(test_file))
     return render_template('cvsdisplay.html', data=test_data)
 
+@app.route('/foxdata/')
+def foxdata():
+    with open("../dataset/raw_news_titles/fox_news_titles.csv", 'r', encoding="utf-8") as fox_file:
+        fox_data = list(csv.reader(fox_file))
+    return render_template('csvdisplay.html', data=fox_data)
+
 @app.route("/hello/")
 @app.route("/hello/<name>")
 def hello_there(name = None):
