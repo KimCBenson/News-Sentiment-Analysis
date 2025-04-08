@@ -3,7 +3,8 @@ import os
 from datetime import datetime
 import csv
 
-from flask import Flask, render_template, Markup
+from flask import Flask, render_template
+from markupsafe import Markup
 
 
 app = Flask(__name__)
@@ -22,38 +23,27 @@ def contact():
 
 @app.route('/cnndata/')
 def cnndata():
-    data = []
-    file_path = "dataset/raw_news_titles/cnnarticles.csv"
-
-    with open(file_path, 'r', encoding='utf-8') as file:
-        csv_reader = csv.reader(file)
-        for row in csv_reader:
-            escaped_row = [Markup(cell) for cell in row]
-            data.append(escaped_row)
-    
+    with open("../dataset/raw_news_titles/cnnarticles.csv", 'r', encoding='utf-8') as file:
+        data = list(csv.reader(file))
     return render_template('cvsdisplay.html', data=data)
 
 @app.route('/nprdata/')
 def nprdata():
-    npr_data = []
-    npr_path = "dataset/raw_news_titles/nprarticles.csv"
-
-    with open(npr_path, 'r') as file:
-        csv_reader = csv.reader(file)
-        for row in csv_reader:
-            npr_data.append(row)
+    with open("../dataset/raw_news_titles/nprarticles.csv", 'r', encoding="utf-8") as npr_file:
+       npr_data = list(csv.reader(npr_file))
     return render_template('cvsdisplay.html', data=npr_data)
 
 @app.route('/nytdata/')
 def nytdata():
-    nyt_data = []
-    nyt_path = "dataset/raw_news_titles/nytarticles.csv"
+    with open("../dataset/raw_news_titles/nytarticles.csv", 'r', encoding="utf-8") as test_file:
+       test_data = list(csv.reader(test_file))
+    return render_template('cvsdisplay.html', data=test_data)
 
-    with open(nyt_path, 'r') as file:
-        csv_reader = csv.reader(file)
-        for row in csv_reader:
-            nyt_data.append(row)
-    return render_template('cvsdisplay.html', data=nyt_data)
+@app.route('/foxdata/')
+def foxdata():
+    with open("../dataset/raw_news_titles/fox_news_titles.csv", 'r', encoding="utf-8") as fox_file:
+        fox_data = list(csv.reader(fox_file))
+    return render_template('csvdisplay.html', data=fox_data)
 
 @app.route("/hello/")
 @app.route("/hello/<name>")
