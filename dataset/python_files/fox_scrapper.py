@@ -7,7 +7,6 @@ import csv
 # Initial Setup
 url = "https://www.foxnews.com/"
 headers = {"User-Agent": "Mozilla/5.0"}
-CSV_FILENAME = "dataset/fnarticles.csv"
 
 # Send GET request and parse
 response = requests.get(url, headers=headers)
