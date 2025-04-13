@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+Something
+{% endblock %}
+{% block content %}
+<h1>Here is a form</h1>
+
+<form method="post">
+    Enter the article title: <input name="Title"> <br><br>
+
+    Enter word to use for analysis: <input name="Analysis word"> <br><br>
+
+    <button type="submit">submit</button>
+</form>
+{% if article and word %}
+<div class="result">
+    <p>Article: {{ article }}</p>
+    <p>Analysis word: {{ word }}</p>
+</div>
+{% endif %}
+{% endblock %}
