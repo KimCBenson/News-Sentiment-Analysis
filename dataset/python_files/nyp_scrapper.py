@@ -1,4 +1,4 @@
-# File is intended to scrape article titles off Fox News
+# File is intended to scrape article titles off New York Post
 # Thomas Lukasiewicz
 import requests
 import csv
