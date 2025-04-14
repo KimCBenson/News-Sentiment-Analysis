@@ -5,13 +5,13 @@ from datetime import datetime
 import csv
 
 
-asba_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'ASBA prototype'))
+asba_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'ABSA'))
 
 sys.path.insert(0, asba_path)
 
 from flask import Flask, render_template, request
 from markupsafe import Markup
-from BasicABSA import run_absa
+from ABSA import run_absa
 
 
 app = Flask(__name__)
