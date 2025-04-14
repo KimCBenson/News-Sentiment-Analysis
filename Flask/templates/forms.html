@@ -12,10 +12,9 @@ Something
 
     <button type="submit">submit</button>
 </form>
-{% if article and word %}
+{% if result %}
 <div class="result">
-    <p>Article: {{ article }}</p>
-    <p>Analysis word: {{ word }}</p>
+    <p>Result: {{ result }}</p>
 </div>
 {% endif %}
 {% endblock %}

@@ -1,10 +1,17 @@
 import re
 import os
+import sys
 from datetime import datetime
 import csv
 
-from flask import Flask, render_template
+
+asba_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'ASBA prototype'))
+
+sys.path.insert(0, asba_path)
+
+from flask import Flask, render_template, request
 from markupsafe import Markup
+from BasicABSA import run_absa
 
 
 app = Flask(__name__)
@@ -43,16 +50,18 @@ def nytdata():
 def foxdata():
     with open("../dataset/raw_news_titles/fox_news_titles.csv", 'r', encoding="utf-8") as fox_file:
         fox_data = list(csv.reader(fox_file))
-    return render_template('csvdisplay.html', data=fox_data)
+    return render_template('cvsdisplay.html', data=fox_data)
 
-@app.route("/hello/")
-@app.route("/hello/<name>")
-def hello_there(name = None):
-    return render_template(
-        "website.html",
-        name=name,
-        date=datetime.now()
-    )
+@app.route('/articleanalysis/', methods=['GET', 'POST'])
+def articleanalysis():
+    if request.method == 'GET':
+        return render_template('forms.html')
+
+    article = request.form.get('Title')
+    word = request.form.get('Analysis word')
+
+    result = run_absa(word, article)
+    return render_template('forms.html', result=result)
 
 @app.route("/api/data")
 def get_data():
