@@ -2,12 +2,17 @@
     font-weight: 600;
     color: blue;
 }
+
 .navbar {
     background-color: lightslategray;
     font-size: 1em;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
-    padding: 8px 5px 8px 5px;
+    padding: 8px 8px 8px 10px;
+    overflow: hidden; /* Contains floating elements */
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    display: block; /* Ensure block display */
 }
 
 .navbar a {
@@ -16,20 +21,80 @@
 }
 
 .navbar-brand {
+    font-variant: small-caps;
     font-size: 1.2em;
     font-weight: 600;
+    float: left; /* Position correctly */
+    padding: 8px 5px;
 }
 
 .navbar-item {
     font-variant: small-caps;
-    margin-left: 30px;
+    margin-left: 0;
 }
 
 .body-content {
     padding: 5px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 table, th, td {
     border: 1px solid;
-  }
+}
+
+.dropdown {
+    float: left; /* Changed back to left float */
+    overflow: hidden;
+    margin-left: 20px; /* Spacing from navbar-brand */
+}
+  
+/* Dropdown button */
+.dropdown .dropbtn {
+    font-size: 1.2em;
+    font-weight: 200;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px 16px; /* Match navbar padding */
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    font-variant: small-caps; /* Match navbar style */
+    cursor: pointer; /* Shows it's clickable */
+}
+  
+/* Add a red background color to navbar links on hover */
+.dropdown:hover .dropbtn {
+    background-color: slategrey;
+}
+  
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    /*left: 0;  Align to left edge of dropdown button instead of right */
+}
+  
+/* Links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+  
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -23,20 +23,18 @@ from ABSA import run_absa
 app = Flask(__name__)
 
 
-@app.route("/")
-def home():
-    return render_template("home.html")
+@app.route("/", methods=['GET', 'POST'], endpoint='home')
+def articleanalysis():
+    if request.method == 'GET':
+        return render_template('forms.html')
 
 
-@app.route("/about/")
-def about():
-    return render_template("about.html")
+    article = request.form.get('Title')
+    word = request.form.get('Analysis word')
 
 
-@app.route("/contact/")
-def contact():
-    return render_template("contact.html")
-
+    result = run_absa(word, article)
+    return render_template('forms.html', result=result)
 
 @app.route('/cnndata/')
 def cnndata():
@@ -66,23 +64,7 @@ def foxdata():
     return render_template('cvsdisplay.html', data=fox_data)
 
 
-@app.route('/articleanalysis/', methods=['GET', 'POST'], endpoint='articleanalysis')
-def articleanalysis():
-    if request.method == 'GET':
-        return render_template('forms.html')
-
-
-    article = request.form.get('Title')
-    word = request.form.get('Analysis word')
-
-
-    result = run_absa(word, article)
-    return render_template('forms.html', result=result)
-
-
-@app.route("/api/data")
-def get_data():
-    return app.send_static_file("data.json")
+#@app.route('/articleanalysis/', methods=['GET', 'POST'], endpoint='articleanalysis')
 
 
 if __name__ == "__main__":

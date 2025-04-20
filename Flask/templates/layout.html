@@ -8,14 +8,17 @@
 
     <body>
         <div class="navbar">
-            <a href="{{ url_for('home') }}" class="navbar-brand">Home</a>
-            <a href="{{ url_for('about') }}" class="navbar-item">About</a>
-            <a href="{{ url_for('contact') }}" class="navbar-item">Contact</a>
-            <a href="{{ url_for('cnndata') }}" class="navbar-item">CNN Data</a>
-            <a href="{{ url_for('nprdata') }}" class="navbar-item">NPR Data</a>
-            <a href="{{ url_for('nytdata') }}" class="navbar-item">NYT Data</a>
-            <a href="{{ url_for('foxdata') }}" class="navbar-item">FOX Data</a>
-            <a href="{{ url_for('articleanalysis')}}" class="navbar-item">Article Analysis</a>
+            <a href="{{ url_for('home')}}" class="navbar-brand">Article Analysis</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn">Exisiting News Articles ▼</button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('cnndata') }}" class="navbar-item">CNN Data</a>
+                    <a href="{{ url_for('nprdata') }}" class="navbar-item">NPR Data</a>
+                    <a href="{{ url_for('nytdata') }}" class="navbar-item">NYT Data</a>
+                    <a href="{{ url_for('foxdata') }}" class="navbar-item">FOX Data</a>
+                </div>
+            </div>
         </div>
 
         <div class="body-content">
