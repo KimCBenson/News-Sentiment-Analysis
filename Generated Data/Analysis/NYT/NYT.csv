@@ -1,0 +1,61 @@
+Negative Aspect,Neutral Aspect,Positive Aspect,Aspect,Data Pool Size
+0.0,0.0,0.0,Jeff Bezos,0
+0.0,0.0,0.0,Bezos,0
+0.0,0.0,0.0,Joe Biden,0
+0.0,0.0,0.0,Biden,0
+0.0,0.0,0.0,Elon Musk,0
+0.0,0.0,0.0,Musk,0
+0.0,0.0,0.0,Vladimir Putin,0
+0.0,0.0,0.0,Putin,0
+0.0,0.0,0.0,Donald Trump,0
+0.6882894,0.28323957,0.028471008,Trump,12
+0.0,0.0,0.0,Volodymyr Zelenskyy,0
+0.0,0.0,0.0,Volodymyr Zelensky,0
+0.0,0.0,0.0,Zelensky,0
+0.0,0.0,0.0,Ukraine,0
+0.0,0.0,0.0,Russia,0
+0.0,0.0,0.0,China,0
+0.0,0.0,0.0,Mexico,0
+0.0,0.0,0.0,Canada,0
+0.0,0.0,0.0,Israel,0
+0.0,0.0,0.0,Palestine,0
+0.20905441,0.55378413,0.23716149,US,4
+0.0,0.0,0.0,USA,0
+0.529389,0.43645605,0.034154907,America,2
+0.0,0.0,0.0,Gaza,0
+0.0,0.0,0.0,Washington,0
+0.0,0.0,0.0,Moscow,0
+0.0,0.0,0.0,White House,0
+0.0,0.0,0.0,Puerto Rico,0
+0.0,0.0,0.0,Hispanic,0
+0.0,0.0,0.0,Latin,0
+0.0,0.0,0.0,Latino,0
+0.0,0.0,0.0,Latina,0
+0.0,0.0,0.0,Native Hawaiian,0
+0.0,0.0,0.0,Alaska Native,0
+0.0,0.0,0.0,Native American,0
+0.0,0.0,0.0,Navajo,0
+0.0,0.0,0.0,Abenaki,0
+0.0,0.0,0.0,Asian,0
+0.9868276,0.007885188,0.0052871774,White,1
+0.0,0.0,0.0,Black,0
+0.0,0.0,0.0,African American,0
+0.0,0.0,0.0,Queer,0
+0.0,0.0,0.0,Gay,0
+0.50401324,0.41756532,0.07842146,Trans,16
+0.4901283,0.4895217,0.02035001,Transgender,13
+0.0,0.0,0.0,Disabled,0
+0.0,0.0,0.0,Veteran,0
+0.0,0.0,0.0,Homeless,0
+0.0,0.0,0.0,Citizen,0
+0.0,0.0,0.0,Undocumented,0
+0.0,0.0,0.0,Immigrant,0
+0.0,0.0,0.0,Migrant,0
+0.0,0.0,0.0,Employed,0
+0.0,0.0,0.0,Unemployed,0
+0.8770276,0.11718523,0.0057872394,Male,1
+0.524823,0.47140044,0.0037766197,Female,1
+0.0,0.0,0.0,Man,0
+0.0,0.0,0.0,Woman,0
+0.0,0.0,0.0,Police,0
+0.0,0.0,0.0,LGBTQ+,0
