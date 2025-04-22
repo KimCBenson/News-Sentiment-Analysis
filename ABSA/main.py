@@ -8,11 +8,11 @@ import Utility
 import csv
 
 ASPECT_FILE_PATH = \
-    "C:\\Users\\cgb\\Desktop\\local_nsa_things\\submission5\\Generated Data\\Aspects\\Aspects.csv"
+    ""
 TEXTS_FILE_PATH = \
-    "C:\\Users\\cgb\\Desktop\\local_nsa_things\\submission5\\dataset\\raw_news_titles\\nytarticles.csv"
+    ""
 OUTPUT_CSV_PATH = \
-    "C:\\Users\\cgb\\Desktop\\local_nsa_things\\submission5\\Generated Data\\Analysis\\NYT\\NYT.csv"
+    ""
 
 
 if __name__ == "__main__":
